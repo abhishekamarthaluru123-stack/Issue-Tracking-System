@@ -1,11 +1,12 @@
 # 🐞 Issue Tracking System
 
-![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo-name?style=social)
-![GitHub forks](https://img.shields.io/github/forks/your-username/your-repo-name?style=social)
-![GitHub issues](https://img.shields.io/github/issues/your-username/your-repo-name)
-![GitHub license](https://img.shields.io/github/license/your-username/your-repo-name)
+![Stars](https://img.shields.io/github/stars/YOUR_USERNAME/YOUR_REPO_NAME?style=social)
+![Forks](https://img.shields.io/github/forks/YOUR_USERNAME/YOUR_REPO_NAME?style=social)
+![Issues](https://img.shields.io/github/issues/YOUR_USERNAME/YOUR_REPO_NAME)
+![License](https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO_NAME)
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Django](https://img.shields.io/badge/Django-Framework-green)
+
 
 ---
 
