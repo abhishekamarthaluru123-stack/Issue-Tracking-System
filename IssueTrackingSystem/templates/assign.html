@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header bg-info text-white">
+        <h4>Assign Developer to Bug</h4>
+    </div>
+
+    <div class="card-body">
+
+        <p><strong>Bug ID:</strong> #{{ bug.bug_id }}</p>
+        <p><strong>Title:</strong> {{ bug.title }}</p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Select Developer</label>
+                <select name="developer" class="form-control">
+                    {% for dev in developers %}
+                        <option value="{{ dev.id }}">
+                            {{ dev.username }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Assign
+            </button>
+
+            <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+                Cancel
+            </a>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

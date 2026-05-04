@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <h4>Bug Management Dashboard</h4>
+    </div>
+
+    <div class="card-body">
+
+        <!-- Filter + Search Row -->
+        <div class="row mb-3">
+
+            <div class="col-md-6">
+                <a href="?status=All" class="btn btn-secondary btn-sm">All</a>
+                <a href="?status=Pending" class="btn btn-warning btn-sm">Pending</a>
+                <a href="?status=Resolved" class="btn btn-success btn-sm">Resolved</a>
+            </div>
+
+            <div class="col-md-6 text-end">
+                <form method="GET" class="d-inline">
+                    <input type="text" name="search"
+                           placeholder="Search by title..."
+                           value="{{ search_query }}"
+                           class="form-control d-inline w-50">
+
+                    <button class="btn btn-dark btn-sm">
+                        Search
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        {% if request.user.groups.first.name == "Tester" %}
+            <a href="{% url 'create_bug' %}" class="btn btn-primary mb-3">
+                + Create Bug
+            </a>
+        {% endif %}
+
+        <table class="table table-bordered table-hover text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Bug ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Assigned To</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for bug in bugs %}
+                <tr>
+                    <td><strong>#{{ bug.bug_id }}</strong></td>
+                    <td>{{ bug.title }}</td>
+
+                    <td>
+                        {% if bug.status == "Resolved" %}
+                            <span class="badge bg-success">Resolved</span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {% if bug.assigned_to %}
+                            {{ bug.assigned_to.username }}
+                        {% else %}
+                            <span class="text-muted">Not Assigned</span>
+                        {% endif %}
+                    </td>
+
+                    <td>
+
+                        {% if request.user.groups.first.name == "Manager" %}
+                            <a href="{% url 'assign_bug' bug.bug_id %}"
+                               class="btn btn-info btn-sm">
+                                Assign
+                            </a>
+                        {% endif %}
+
+                        {% if request.user == bug.assigned_to %}
+                            <a href="{% url 'update_status' bug.bug_id %}"
+                               class="btn btn-success btn-sm">
+                                Mark Resolved
+                            </a>
+                        {% endif %}
+
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No bugs found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-end">
+            <a href="{% url 'logout' %}" class="btn btn-danger btn-sm">
+                Logout
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
