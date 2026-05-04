@@ -1,5 +1,14 @@
 # 🐞 Issue Tracking System
 
+![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo-name?style=social)
+![GitHub forks](https://img.shields.io/github/forks/your-username/your-repo-name?style=social)
+![GitHub issues](https://img.shields.io/github/issues/your-username/your-repo-name)
+![GitHub license](https://img.shields.io/github/license/your-username/your-repo-name)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Django](https://img.shields.io/badge/Django-Framework-green)
+
+---
+
 A Django-based web application to manage and track bugs/issues within a project. This system allows users to create, assign, update, and monitor bugs efficiently.
 
 ---
@@ -30,14 +39,14 @@ A Django-based web application to manage and track bugs/issues within a project.
 IssueTrackingSystem/
 │
 ├── manage.py
-├── IssueTrackingSystem/     # Main project settings
-├── bugs/                   # Core app
+├── IssueTrackingSystem/
+├── bugs/
 │   ├── models.py
 │   ├── views.py
 │   ├── forms.py
 │   ├── urls.py
 │
-├── templates/              # HTML templates
+├── templates/
 │   ├── home.html
 │   ├── dashboard.html
 │   ├── create_bug.html
@@ -51,77 +60,51 @@ IssueTrackingSystem/
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone the repository
-
 ```
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
-```
-
-### 2. Create virtual environment
-
-```
 python -m venv venv
-source venv/bin/activate   # On Windows: venv\\Scripts\\activate
-```
-
-### 3. Install dependencies
-
-```
+source venv/bin/activate   # Windows: venv\\Scripts\\activate
 pip install -r requirements.txt
-```
-
-### 4. Run migrations
-
-```
 python manage.py migrate
-```
-
-### 5. Start the server
-
-```
 python manage.py runserver
-```
-
-### 6. Open in browser
-
-```
-http://127.0.0.1:8000/
 ```
 
 ---
 
 ## 📸 Screenshots
 
+*Add screenshots here*
+
 ---
 
 ## 🔐 Future Improvements
 
 * Authentication system (Login/Register with roles)
-* Bug priority levels (Low, Medium, High)
+* Bug priority levels
 * Advanced filtering & search
 * File/image attachments
-* REST API using Django REST Framework
+* REST API (Django REST Framework)
 * UI improvements (Bootstrap/Tailwind)
-* Deployment (Render / AWS)
+* Deployment
 
 ---
 
 ## 🌍 Deployment
 
-*Deployment link will be added here*
+*Add your live link here*
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork the repo and submit a pull request.
+Feel free to fork and submit PRs!
 
 ---
 
 ## 📄 License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License.
 
 ---
 
@@ -131,6 +114,6 @@ This project is open-source and available under the MIT License.
 
 ---
 
-## ⭐ Show your support
+## ⭐ Support
 
-If you like this project, give it a ⭐ on GitHub!
+Give it a ⭐ if you like this project!
